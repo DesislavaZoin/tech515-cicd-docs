@@ -85,7 +85,7 @@ This allows automatic builds when code is pushed to GitHub.
 ### Build Environment
 - Tick **Provide Node & npm bin/ folder to PATH**
 - **Node version:** 20
- ![alt text](../images/node-version.png)
+ ![Node version](../images/node-version.png)
 
 Ensures the app runs with the correct Node version (required by Sparta app)
 

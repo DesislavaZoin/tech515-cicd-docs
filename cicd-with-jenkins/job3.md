@@ -93,8 +93,8 @@ EOF
 ```
 
 What this does:
-- `scp` → copies built app from Jenkins to EC2
-- `ssh << EOF` → runs commands on EC2:
+- `scp` - copies built app from Jenkins to EC2
+- `ssh << EOF` - runs commands on EC2:
 - `cd /home/ubuntu/app` – navigate to app folder
 - `npm install` – install dependencies
 - `pm2 stop all || true` – stops running processes (ignores errors if none)
@@ -118,21 +118,21 @@ This avoids git cloning in production and keeps deployment safe.
 To verify that Job 3 deploys changes to the frontpage via the CICD pipeline:
 
 1. Navigate to the app views folder:
-```bash
-cd ~/app/views
-```
+   ```bash
+   cd ~/app/views
+   ```
 2. Edit the frontpage (index.ejs) to add a timestamped change
-```html
-<h2>The app is running correctly.</h2>
-Change via Jenkins CICD pipeline on 23/12/25 11:31
-```
+    ```html
+    <h2>The app is running correctly.</h2>
+    Change via Jenkins CICD pipeline on 23/12/25 11:31
+    ```
 - Save and exit the editor
 3. Stage and commit the change:
-```
-git add .
-git commit -m "change frontpage 11:31"
-git push
-```
+    ```bash
+    git add .
+    git commit -m "change frontpage 11:31"
+    git push
+    ```
 4. Wait for the pipeline to run:
 - Job 1 tests the dev branch
 - Job 2 merges dev → main
